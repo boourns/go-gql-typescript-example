@@ -1,0 +1,30 @@
+{
+  "name": "go-gql-typescript-example",
+  "version": "1.0.0",
+  "description": "Example of strongly typed go/graphql/typescript web application",
+  "main": "index.js",
+  "repository": "https://github.com/boourns/go-gql-typescript-example",
+  "author": "Tom Burns",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "graphql": "^15.4.0",
+    "graphql-request": "^3.4.0",
+    "preact": "^10.5.5",
+    "preact-router": "^3.2.1"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.2.0",
+    "@graphql-codegen/typescript": "2.2.2",
+    "@graphql-codegen/typescript-graphql-files-modules": "2.1.0",
+    "typescript": "^4.5.2",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1",
+    "css-loader": "^6.2.0",
+    "css-modules-typescript-loader": "^4.0.1",
+    "sass": "^1.39.2",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "ts-loader": "^8.0.12"
+  }
+}
