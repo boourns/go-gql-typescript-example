@@ -15,11 +15,11 @@ func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) 
 }
 
 func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
-	panic(fmt.Errorf("not implemented"))
+	return model.SelectTodo(Database, "")
 }
 
 func (r *todoResolver) User(ctx context.Context, obj *model.Todo) (*model.User, error) {
-	panic(fmt.Errorf("not implemented"))
+	return obj.User(Database)
 }
 
 // Mutation returns generated.MutationResolver implementation.
