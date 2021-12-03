@@ -29,6 +29,6 @@
   },
   "scripts": {
     "build": "./node_modules/.bin/webpack",
-    "graphql": "graphql-codegen --config codegen.yml"
+    "graphql": "graphql-codegen --config graphql.config.yml"
   }
 }
