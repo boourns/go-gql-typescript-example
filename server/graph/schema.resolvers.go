@@ -5,13 +5,34 @@ package graph
 
 import (
 	"context"
+	"database/sql"
 	"fmt"
 	"go-gql-typescript-example/graph/generated"
 	"go-gql-typescript-example/graph/model"
+	"go-gql-typescript-example/lib"
 )
 
 func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
-	panic(fmt.Errorf("not implemented"))
+	// do whatever authorization of context or associated objects
+
+	// input validation
+	if input.Text == "" {
+		return nil, fmt.Errorf("todo text must not be blank")
+	}
+
+	todo := &model.Todo{
+		Done: false,
+		Text: input.Text,
+	}
+
+	// use a transaction just for demonstration purposes even though we're doing a single SQL statement
+	err := lib.Transact(Database, func(tx *sql.Tx) error {
+		// if this inner function returns an error, the entire block is rolled back
+
+		return todo.Insert(Database)
+	})
+
+	return todo, err
 }
 
 func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
