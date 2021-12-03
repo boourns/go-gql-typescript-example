@@ -97,13 +97,13 @@ func CreateTodoTable(tx dbutil.DBLike) error {
 
 CREATE TABLE Todo (
   
-    ID VARCHAR(255) PRIMARY KEY,
+    ID INTEGER PRIMARY KEY,
   
     Text VARCHAR(255),
   
     Done BOOLEAN,
   
-    UserID VARCHAR(255)
+    UserID INTEGER
   
 );
 

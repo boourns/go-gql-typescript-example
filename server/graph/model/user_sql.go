@@ -97,7 +97,7 @@ func CreateUserTable(tx dbutil.DBLike) error {
 
 CREATE TABLE User (
   
-    ID VARCHAR(255) PRIMARY KEY,
+    ID INTEGER PRIMARY KEY,
   
     Name VARCHAR(255)
   
