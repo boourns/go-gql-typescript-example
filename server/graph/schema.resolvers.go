@@ -21,8 +21,9 @@ func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) 
 	}
 
 	todo := &model.Todo{
-		Done: false,
-		Text: input.Text,
+		Done:   false,
+		Text:   input.Text,
+		UserID: 0,
 	}
 
 	// use a transaction just for demonstration purposes even though we're doing a single SQL statement
