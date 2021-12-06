@@ -2,10 +2,10 @@ package lib
 
 import (
 	"database/sql"
-	"github.com/boourns/dbutil"
+	"github.com/boourns/dblib"
 )
 
-func Run(tx dbutil.DBLike, command string) error {
+func Run(tx dblib.DBLike, command string) error {
 	stmt, err := tx.Prepare(command)
 	if err != nil {
 		return err

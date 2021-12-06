@@ -2,7 +2,7 @@ package model
 
 import (
 	"fmt"
-	"github.com/boourns/dbutil"
+	"github.com/boourns/dblib"
 )
 
 type Todo struct {
@@ -12,7 +12,7 @@ type Todo struct {
 	UserID int64  `json:"user"`
 }
 
-func (t *Todo) User(db dbutil.DBLike) (*User, error) {
+func (t *Todo) User(db dblib.DBLike) (*User, error) {
 	users, err := SelectUser(db, "WHERE ID = ?", t.UserID)
 	if err != nil {
 		return nil, err

@@ -3,7 +3,7 @@
 package model
 
 import (
-	"github.com/boourns/dbutil"
+	"github.com/boourns/dblib"
   "database/sql"
   "fmt"
 )
@@ -22,7 +22,7 @@ func loadTodo(rows *sql.Rows) (*Todo, error) {
 	return &ret, nil
 }
 
-func SelectTodo(tx dbutil.DBLike, cond string, condFields ...interface{}) ([]*Todo, error) {
+func SelectTodo(tx dblib.DBLike, cond string, condFields ...interface{}) ([]*Todo, error) {
   ret := []*Todo{}
   sql := fmt.Sprintf("SELECT %s from Todo %s", sqlFieldsForTodo(), cond)
 	rows, err := tx.Query(sql, condFields...)
@@ -40,7 +40,7 @@ func SelectTodo(tx dbutil.DBLike, cond string, condFields ...interface{}) ([]*To
   return ret, nil
 }
 
-func (s *Todo) Update(tx dbutil.DBLike) error {
+func (s *Todo) Update(tx dblib.DBLike) error {
 		stmt, err := tx.Prepare(fmt.Sprintf("UPDATE Todo SET ID=?,Text=?,Done=?,UserID=? WHERE Todo.ID = ?", )) // ADD FIELD HERE
 
 		if err != nil {
@@ -58,7 +58,7 @@ func (s *Todo) Update(tx dbutil.DBLike) error {
     return nil
 }
 
-func (s *Todo) Insert(tx dbutil.DBLike) error {
+func (s *Todo) Insert(tx dblib.DBLike) error {
 		stmt, err := tx.Prepare("INSERT INTO Todo(Text,Done,UserID) VALUES(?,?,?)") // ADD FIELD HERE
 		if err != nil {
 			return err
@@ -76,7 +76,7 @@ func (s *Todo) Insert(tx dbutil.DBLike) error {
 	  return nil
 }
 
-func (s *Todo) Delete(tx dbutil.DBLike) error {
+func (s *Todo) Delete(tx dblib.DBLike) error {
 		stmt, err := tx.Prepare("DELETE FROM Todo WHERE ID = ?")
 		if err != nil {
 			return err
@@ -90,7 +90,7 @@ func (s *Todo) Delete(tx dbutil.DBLike) error {
 	  return nil
 }
 
-func CreateTodoTable(tx dbutil.DBLike) error {
+func CreateTodoTable(tx dblib.DBLike) error {
 		stmt, err := tx.Prepare(`
 
 

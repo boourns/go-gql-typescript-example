@@ -3,7 +3,7 @@
 package model
 
 import (
-	"github.com/boourns/dbutil"
+	"github.com/boourns/dblib"
   "database/sql"
   "fmt"
 )
@@ -22,7 +22,7 @@ func loadUser(rows *sql.Rows) (*User, error) {
 	return &ret, nil
 }
 
-func SelectUser(tx dbutil.DBLike, cond string, condFields ...interface{}) ([]*User, error) {
+func SelectUser(tx dblib.DBLike, cond string, condFields ...interface{}) ([]*User, error) {
   ret := []*User{}
   sql := fmt.Sprintf("SELECT %s from User %s", sqlFieldsForUser(), cond)
 	rows, err := tx.Query(sql, condFields...)
@@ -40,7 +40,7 @@ func SelectUser(tx dbutil.DBLike, cond string, condFields ...interface{}) ([]*Us
   return ret, nil
 }
 
-func (s *User) Update(tx dbutil.DBLike) error {
+func (s *User) Update(tx dblib.DBLike) error {
 		stmt, err := tx.Prepare(fmt.Sprintf("UPDATE User SET ID=?,Name=? WHERE User.ID = ?", )) // ADD FIELD HERE
 
 		if err != nil {
@@ -58,7 +58,7 @@ func (s *User) Update(tx dbutil.DBLike) error {
     return nil
 }
 
-func (s *User) Insert(tx dbutil.DBLike) error {
+func (s *User) Insert(tx dblib.DBLike) error {
 		stmt, err := tx.Prepare("INSERT INTO User(Name) VALUES(?)") // ADD FIELD HERE
 		if err != nil {
 			return err
@@ -76,7 +76,7 @@ func (s *User) Insert(tx dbutil.DBLike) error {
 	  return nil
 }
 
-func (s *User) Delete(tx dbutil.DBLike) error {
+func (s *User) Delete(tx dblib.DBLike) error {
 		stmt, err := tx.Prepare("DELETE FROM User WHERE ID = ?")
 		if err != nil {
 			return err
@@ -90,7 +90,7 @@ func (s *User) Delete(tx dbutil.DBLike) error {
 	  return nil
 }
 
-func CreateUserTable(tx dbutil.DBLike) error {
+func CreateUserTable(tx dblib.DBLike) error {
 		stmt, err := tx.Prepare(`
 
 

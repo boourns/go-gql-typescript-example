@@ -2,11 +2,11 @@ package main
 
 import (
 	"database/sql"
-	"github.com/boourns/dbutil"
+	"github.com/boourns/dblib"
+	"github.com/boourns/dblib/migrations"
 	"go-gql-typescript-example/graph"
 	"go-gql-typescript-example/graph/generated"
 	"go-gql-typescript-example/graph/model"
-	"go-gql-typescript-example/lib/migrations"
 	"log"
 	"net/http"
 	"os"
@@ -65,10 +65,10 @@ func openAndMigrateDatabase(filename string) *sql.DB {
 	return db
 }
 
-func CreateUserMigration(tx dbutil.DBLike) error {
+func CreateUserMigration(tx dblib.DBLike) error {
 	return model.CreateUserTable(tx)
 }
 
-func CreateTodoMigration(tx dbutil.DBLike) error {
+func CreateTodoMigration(tx dblib.DBLike) error {
 	return model.CreateTodoTable(tx)
 }
