@@ -1,6 +1,8 @@
 package main
 
 import (
+      	_ "github.com/mattn/go-sqlite3"
+
 	"database/sql"
 	"github.com/boourns/dblib"
 	"github.com/boourns/dblib/migrations"
