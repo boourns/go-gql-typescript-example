@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"go-gql-typescript-example/graph/generated"
 	"go-gql-typescript-example/graph/model"
-	"go-gql-typescript-example/lib"
+	"github.com/boourns/dblib"
 )
 
 func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
@@ -27,7 +27,7 @@ func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) 
 	}
 
 	// use a transaction just for demonstration purposes even though we're doing a single SQL statement
-	err := lib.Transact(Database, func(tx *sql.Tx) error {
+	err := dblib.Transact(Database, func(tx *sql.Tx) error {
 		// if this inner function returns an error, the entire block is rolled back
 
 		return todo.Insert(Database)

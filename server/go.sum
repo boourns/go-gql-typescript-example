@@ -12,6 +12,8 @@ github.com/boourns/dblib v0.0.0-20211206180544-93e2239e21d3 h1:Z4eGgTPTsTxViSuIG
 github.com/boourns/dblib v0.0.0-20211206180544-93e2239e21d3/go.mod h1:5DIzBnupyRy4Nwpd7i5UIgQJ9MUERVr/jDnhl+x0GYA=
 github.com/boourns/dblib v0.0.0-20211206181331-595b699a5ede h1:vMNJP2x/uXI78kb5a9UC6eQLi6fteBLQLmE2bLpmzA0=
 github.com/boourns/dblib v0.0.0-20211206181331-595b699a5ede/go.mod h1:5DIzBnupyRy4Nwpd7i5UIgQJ9MUERVr/jDnhl+x0GYA=
+github.com/boourns/dblib v0.0.0-20211206182052-a4da801c5bbd h1:uGqcn+nlOeUJ7jkI3FQdhf/HFoQI+N2zH7q4ZG/srFA=
+github.com/boourns/dblib v0.0.0-20211206182052-a4da801c5bbd/go.mod h1:5DIzBnupyRy4Nwpd7i5UIgQJ9MUERVr/jDnhl+x0GYA=
 github.com/boourns/scaffold v0.0.0-20211203024854-549f411c4bac h1:yhab66dn7UIo9P2eicUy2Sz+pJAld+R2/Z/Y1oJySS4=
 github.com/boourns/scaffold v0.0.0-20211203024854-549f411c4bac/go.mod h1:JNc1aebM2sofRfJuDPYxJehMvl05Km8kDvbpXG1+k7Y=
 github.com/boourns/scaffold v0.0.0-20211206180804-d481beae53dc h1:1qKAaYiNIoywrFhryaRxgIi7ezIUEiMVSVBb2Di6lUk=
