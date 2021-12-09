@@ -8,14 +8,9 @@ github.com/andreyvit/diff v0.0.0-20170406064948-c7f18ee00883 h1:bvNMNQO63//z+xNg
 github.com/andreyvit/diff v0.0.0-20170406064948-c7f18ee00883/go.mod h1:rCTlJbsFo29Kk6CurOXKm700vrz8f0KW0JNfpkRJY/8=
 github.com/arbovm/levenshtein v0.0.0-20160628152529-48b4e1c0c4d0 h1:jfIu9sQUG6Ig+0+Ap1h4unLjW6YQJpKZVmUzxsD4E/Q=
 github.com/arbovm/levenshtein v0.0.0-20160628152529-48b4e1c0c4d0/go.mod h1:t2tdKJDJF9BV14lnkjHmOQgcvEKgtqs5a1N3LNdJhGE=
-github.com/boourns/dblib v0.0.0-20211206180544-93e2239e21d3 h1:Z4eGgTPTsTxViSuIGtBe0ltRiOFUId7pmOf3EBqR5u8=
 github.com/boourns/dblib v0.0.0-20211206180544-93e2239e21d3/go.mod h1:5DIzBnupyRy4Nwpd7i5UIgQJ9MUERVr/jDnhl+x0GYA=
-github.com/boourns/dblib v0.0.0-20211206181331-595b699a5ede h1:vMNJP2x/uXI78kb5a9UC6eQLi6fteBLQLmE2bLpmzA0=
-github.com/boourns/dblib v0.0.0-20211206181331-595b699a5ede/go.mod h1:5DIzBnupyRy4Nwpd7i5UIgQJ9MUERVr/jDnhl+x0GYA=
-github.com/boourns/dblib v0.0.0-20211206182052-a4da801c5bbd h1:uGqcn+nlOeUJ7jkI3FQdhf/HFoQI+N2zH7q4ZG/srFA=
-github.com/boourns/dblib v0.0.0-20211206182052-a4da801c5bbd/go.mod h1:5DIzBnupyRy4Nwpd7i5UIgQJ9MUERVr/jDnhl+x0GYA=
-github.com/boourns/scaffold v0.0.0-20211203024854-549f411c4bac h1:yhab66dn7UIo9P2eicUy2Sz+pJAld+R2/Z/Y1oJySS4=
-github.com/boourns/scaffold v0.0.0-20211203024854-549f411c4bac/go.mod h1:JNc1aebM2sofRfJuDPYxJehMvl05Km8kDvbpXG1+k7Y=
+github.com/boourns/dblib v0.0.0-20211207030750-dbc60fe1aea4 h1:tZYWS6cq3LKNsWvRrG/ZRuW528ltXZzco5smOO+Dj6g=
+github.com/boourns/dblib v0.0.0-20211207030750-dbc60fe1aea4/go.mod h1:5DIzBnupyRy4Nwpd7i5UIgQJ9MUERVr/jDnhl+x0GYA=
 github.com/boourns/scaffold v0.0.0-20211206180804-d481beae53dc h1:1qKAaYiNIoywrFhryaRxgIi7ezIUEiMVSVBb2Di6lUk=
 github.com/boourns/scaffold v0.0.0-20211206180804-d481beae53dc/go.mod h1:GVBgJWxlnprPpfnrRPNoXwlOVR6tfWzTU5QB+ExuiXg=
 github.com/cpuguy83/go-md2man/v2 v2.0.0-20190314233015-f79a8a8ca69d h1:U+s90UTSYgptZMwQh2aRr3LuazLJIa+Pg3Kc1ylSYVY=
@@ -25,8 +20,6 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/dgryski/trifles v0.0.0-20200323201526-dd97f9abfb48 h1:fRzb/w+pyskVMQ+UbP35JkH8yB7MYb4q/qhBarqZE6g=
 github.com/dgryski/trifles v0.0.0-20200323201526-dd97f9abfb48/go.mod h1:if7Fbed8SFyPtHLHbg49SI7NAdJiC5WIA09pe59rfAA=
-github.com/go-sql-driver/mysql v1.6.0 h1:BCTh4TKNUYmOmMUcQ3IipzF5prigylS7XXjEkfCHuOE=
-github.com/go-sql-driver/mysql v1.6.0/go.mod h1:DCzpHaOWr8IXmIStZouvnhqoel9Qv2LBy8hT2VhHyBg=
 github.com/gogo/protobuf v1.3.2/go.mod h1:P1XiOD3dCwIKUDQYPy72D8LYyHL2YPYrpS2s69NZV8Q=
 github.com/gorilla/context v0.0.0-20160226214623-1ea25387ff6f/go.mod h1:kBGZzfjB9CEq2AlWe17Uuf7NDRt0dE0s8S51q0aT7Yg=
 github.com/gorilla/mux v1.6.1/go.mod h1:1lud6UwP+6orDFRuTfBEV8e9/aOM/c4fVVCaMa2zaAs=

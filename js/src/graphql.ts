@@ -14,6 +14,7 @@ export type Scalars = {
 export type Mutation = {
   __typename?: 'Mutation';
   createTodo: Todo;
+  createUser: User;
 };
 
 
@@ -21,14 +22,20 @@ export type MutationCreateTodoArgs = {
   input: NewTodo;
 };
 
+
+export type MutationCreateUserArgs = {
+  name: Scalars['String'];
+};
+
 export type NewTodo = {
   text: Scalars['String'];
-  userId: Scalars['String'];
+  userId: Scalars['ID'];
 };
 
 export type Query = {
   __typename?: 'Query';
   todos: Array<Todo>;
+  users: Array<User>;
 };
 
 export type Todo = {

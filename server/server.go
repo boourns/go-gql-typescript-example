@@ -1,11 +1,9 @@
 package main
 
 import (
-      	_ "github.com/mattn/go-sqlite3"
+	_ "github.com/mattn/go-sqlite3"
 
 	"database/sql"
-	"github.com/boourns/dblib"
-	"github.com/boourns/dblib/migrations"
 	"go-gql-typescript-example/graph"
 	"go-gql-typescript-example/graph/generated"
 	"go-gql-typescript-example/graph/model"
@@ -13,8 +11,13 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/boourns/dblib/migrations"
+
+	_ "github.com/mattn/go-sqlite3"
+
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
+	"github.com/boourns/dblib"
 )
 
 const defaultPort = "8080"
@@ -33,7 +36,7 @@ func main() {
 	http.Handle("/query", srv)
 
 	http.HandleFunc("/js/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "./static/" + r.URL.Path)
+		http.ServeFile(w, r, "./static/"+r.URL.Path)
 	})
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
@@ -56,10 +59,14 @@ func openAndMigrateDatabase(filename string) *sql.DB {
 	}
 
 	err = migrations.DefineMigration(db, 1, CreateUserMigration)
-	if err != nil { panic(err) }
+	if err != nil {
+		panic(err)
+	}
 
 	migrations.DefineMigration(db, 2, CreateTodoMigration)
-	if err != nil { panic(err) }
+	if err != nil {
+		panic(err)
+	}
 
 	if err != nil {
 		panic(err)

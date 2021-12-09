@@ -2,14 +2,15 @@ package model
 
 import (
 	"fmt"
+
 	"github.com/boourns/dblib"
 )
 
 type Todo struct {
-	ID   int64    `json:"id"`
-	Text string    `json:"text"`
-	Done bool      `json:"done"`
-	UserID int64  `json:"user"`
+	ID     int64  `json:"id"`
+	Text   string `json:"text"`
+	Done   bool   `json:"done"`
+	UserID int64  `json:"userId"`
 }
 
 func (t *Todo) User(db dblib.DBLike) (*User, error) {
