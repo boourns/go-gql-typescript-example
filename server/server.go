@@ -71,6 +71,7 @@ func openAndMigrateDatabase(filename string) *sql.DB {
 	if err != nil {
 		panic(err)
 	}
+
 	return db
 }
 
