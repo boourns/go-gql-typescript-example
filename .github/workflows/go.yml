@@ -1,0 +1,32 @@
+name: Go
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-20.04
+    timeout-minutes: 15
+    steps:
+      - name: Set up Go 1.x
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.13
+      
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v2
+
+      - name: Build Go
+        run: cd server && go build server.go
+
+      - name: Build Javascript
+        run: cd js && yarn && yarn run build
+
+      - name: Server Tests
+        run: cd server && go test
+
