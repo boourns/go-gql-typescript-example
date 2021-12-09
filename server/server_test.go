@@ -38,13 +38,14 @@ func TestFetchTodos(t *testing.T) {
 			Users []*model.User `json:"users"`
 		}
 
-		c.MustPost(`
+		query := `
 query {
   users {
     name
   }
 }
-`, &resp, func(bd *client.Request) {
+`
+		c.MustPost(query, &resp, func(bd *client.Request) {
 			bd.Variables = make(map[string]interface{})
 			bd.Variables["name"] = "bob"
 		})
@@ -62,14 +63,15 @@ func createUser(name string) *model.User { // response struct must match the sha
 		CreateUser *model.User `json:"createUser"`
 	}
 
-	c.MustPost(`
-mutation($name: String!) {
-  createUser(name: $name) {
-    id
-    name
-  }
-}
-`, &resp, func(bd *client.Request) {
+	query := `
+	mutation($name: String!) {
+		createUser(name: $name) {
+			id
+			name
+		}
+	}`
+
+	c.MustPost(query, &resp, func(bd *client.Request) {
 		bd.Variables = make(map[string]interface{})
 		bd.Variables["name"] = "bob"
 	})
