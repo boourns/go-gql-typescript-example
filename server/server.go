@@ -63,11 +63,7 @@ func openAndMigrateDatabase(filename string) *sql.DB {
 		panic(err)
 	}
 
-	migrations.DefineMigration(db, 2, CreateTodoMigration)
-	if err != nil {
-		panic(err)
-	}
-
+	err = migrations.DefineMigration(db, 2, CreateTodoMigration)
 	if err != nil {
 		panic(err)
 	}
